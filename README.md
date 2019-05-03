@@ -47,6 +47,69 @@ docker run --rm --name popserver -h popserver --network  popnet -it m11parveen /
 
 **important to open port aws**
 
+```
+telnet
+ssh
+
+```
+
+**workind in docker**
+
+```
+[root@popserver docker]# telnet localhost 110
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
++OK POP3 localhost 2007f.104 server ready
+USER pere
++OK User name accepted, password please
+PASS pere
++OK Mailbox open, 0 messages
+```
+
+
+** aws cheaking**
+
+```
+[fedora@ip-172-31-20-221 ~]$ telnet 172.22.0.2 110
+Trying 172.22.0.2...
+Connected to 172.22.0.2.
+Escape character is '^]'.
++OK POP3 popserver 2007f.104 server ready
+USER pere
++OK User name accepted, password please
+PASS pere
++OK Mailbox open, 0 messages
+USER anna
+-ERR Unknown TRANSACTION state command
+35.178.211.835.178.211.8
+```
+
+**try from host aula**
+
+```
+[isx0276204@i03 xinetd.d]$ telnet 35.178.211.8 110
+Trying 35.178.211.8...
+Connected to 35.178.211.8.
+Escape character is '^]'.
++OK POP3 popserver 2007f.104 server ready
+USER pere
++OK User name accepted, password please
+PASS pere
++OK Mailbox open, 0 messages
+35.178.211.8
+``
+
+** start from aula host must open 110 de aws and ..**
+
+```
+docker run --rm --name popserver -h popserver -p 110:110 --network  popnet -it m11parveen /bin/bash
+```
+**and need to start server by using command because not start detch**
+
+```
+./startup.sh
+```
 
 
 
