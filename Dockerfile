@@ -1,14 +1,14 @@
 # Version: 0.0.1
-# @edt M06 2018-2019
-# ldapserver base edt.org
+# hisx2 M11 2018-2019
+# pop server pop3s
 # -------------------------------------
 FROM fedora:27
-LABEL author="@edt ASIX M06 Curs 2018-2019"
-LABEL description="ldapserver edt.org cn dataDB"
-RUN dnf -y install procps nmap xinetd uw-imap telnet passwd
+LABEL author="parveeen"
+LABEL description="popserver"
+RUN dnf -y install procps nmap xinetd uw-imap telnet passwd openssl
 RUN mkdir /opt/docker
 COPY * /opt/docker/
 RUN chmod +x /opt/docker/install.sh /opt/docker/startup.sh
 WORKDIR /opt/docker
-EXPOSE 110
+#EXPOSE 110 995
 CMD ["/opt/docker/startup.sh"]

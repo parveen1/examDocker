@@ -3,4 +3,4 @@
 # -------------------------------------
 
 /opt/docker/install.sh && echo "Install Ok"
-/sbin/xinetd   && echo "xinetd Ok"
+/sbin/xinetd -dontfork  && echo "xinetd Ok"
