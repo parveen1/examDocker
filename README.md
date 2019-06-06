@@ -248,3 +248,23 @@ depth=0 C = --, ST = SomeState, L = SomeCity, O = SomeOrganization, OU = SomeOrg
 verify return:1
 
 ```
+
+
+### information about pop server
+
+* need to install uw-imap
+
+* change conf. in file /etc/xinetd.d/ipop3 and pops3s
+
+* put disabled no in place of yes
+
+* when start servere xinetd this server will be start.
+
+* open port for both server and redirection in docker port.
+
+* make user pere and marta
+
+* put password
+
+* make there one mail with permissons
+
