@@ -8,7 +8,7 @@ if not than we use directly docker
 
 [git-rep](https://github.com/parveen1/examDocker)
 
-[docker-hub](https://hub.docker.com/u/parveen1992/m11extraparveen:v1)
+[docker-hub](https://hub.docker.com/u/parveen1992/m11extraparveen)
 
 
 
